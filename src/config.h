@@ -91,6 +91,8 @@ static char *colorname[] = {
 	"black",
 };
 
+static unsigned const int ncolors = sizeof(colorname)/sizeof(*colorname);
+
 /* fg, bg, cursor, reverse cursor (references colorname indexes) */
 static unsigned int defaultfg = 256;
 static unsigned int defaultbg = 257;

@@ -2687,6 +2687,19 @@ strhandle(void)
 			if (narg > 1)
 				xsettitle(strescseq.args[1]);
 			return;
+		case 12:
+			if (narg == 2)
+			{
+				int j = atoi(strescseq.args[1]);
+				if (j >= 0 && j < ncolors)
+				{
+					defaultcs = j;
+					redraw();
+					return;
+				}
+			}
+			fprintf(stderr, "erresc: invalid OSC 12 use\n");
+			return;
 		case 4: /* color set */
 			if (narg < 3)
 				break;
